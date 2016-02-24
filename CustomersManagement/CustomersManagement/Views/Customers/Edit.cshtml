@@ -1,0 +1,78 @@
+﻿@using CustomersManagement.Models
+@model CustomersManagement.Models.CustomerViewModel
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+@using (@Html.BeginForm("Save", "Customers"))
+{
+    @Html.AntiForgeryToken();
+    
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true);
+        @Html.HiddenFor(m => m.Id)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FirstName, new {@class = "control-label col-md-2"})
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FirstName)
+                @Html.ValidationMessageFor(model => model.FirstName)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.LastName, new {@class = "control-label col-md-2"})
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.LastName)
+                @Html.ValidationMessageFor(model => model.LastName)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Address, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Address)
+                @Html.ValidationMessageFor(model => model.Address)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Mobile, new {@class = "control-label col-md-2"})
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Mobile)
+                @Html.ValidationMessageFor(model => model.Mobile)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-12">
+                @Html.Partial("_AddressPartialView", Model.PostalAddress, new ViewDataDictionary{
+                    TemplateInfo = new TemplateInfo() { HtmlFieldPrefix = "PostalAddress" }
+                })
+            </div>
+            @*@Html.Partial("_AddressPartialView", (AddressViewModel) Model.PostalAddress)*@
+            @*@Html.LabelFor(model => model.PostalAddress, new {@class = "control-label col-md-2"})*@
+            @*<div class="col-md-10">
+                @Html.Partial("_AddressPartialView", (AddressViewModel) Model.PostalAddress)
+            </div>*@
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-12">
+                @Html.Partial("_AddressPartialView", Model.ResidentialAddress, new ViewDataDictionary{
+               TemplateInfo = new TemplateInfo() { HtmlFieldPrefix = "ResidentialAddress" }
+           })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-1 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
