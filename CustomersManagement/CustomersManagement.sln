@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomersManagement", "CustomersManagement\CustomersManagement.csproj", "{EA10CB4A-3CB6-4EB0-8DC7-9192BBBF9118}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMS.Repositiry", "CMS.Repositiry\CMS.Repositiry.csproj", "{7350004E-7822-4054-B48E-329C6C29EFDA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{EA10CB4A-3CB6-4EB0-8DC7-9192BBBF9118}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EA10CB4A-3CB6-4EB0-8DC7-9192BBBF9118}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EA10CB4A-3CB6-4EB0-8DC7-9192BBBF9118}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7350004E-7822-4054-B48E-329C6C29EFDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7350004E-7822-4054-B48E-329C6C29EFDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7350004E-7822-4054-B48E-329C6C29EFDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7350004E-7822-4054-B48E-329C6C29EFDA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

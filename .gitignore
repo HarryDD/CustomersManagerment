@@ -2,3 +2,5 @@ CustomersManagement/packages/
 CustomersManagement/CustomersManagement/bin/
 CustomersManagement/CustomersManagement/obj/Debug/
 CustomersManagement/CMS.Repositiry/obj/Debug/
+*.dll
+*.pdb
