@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace ToDoList.Models
+namespace CustomersManagement.Models
 {
     public class CustomerViewModel
     {

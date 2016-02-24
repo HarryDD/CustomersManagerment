@@ -1,18 +1,18 @@
 ﻿using System.Linq;
 using System.Web.Mvc;
-using ToDoList.Models;
-using ToDoList.Repository;
+using CustomersManagement.Models;
+using CustomersManagement.Repository;
 
-namespace ToDoList.Controllers
+namespace CustomersManagement.Controllers
 {
     public class CustomersController : Controller
     {
-        private readonly CustomersRepository customersRepository = new CustomersRepository();
+        private readonly CustomersRepository _customersRepository = new CustomersRepository();
 
         // GET: Customers
         public ActionResult Index()
         {
-            var customers = customersRepository.GetAllCustomers();
+            var customers = _customersRepository.GetAllCustomers();
             var customersViewModel = new CustomersViewModel
             {
                 Customers = customers,
@@ -29,7 +29,7 @@ namespace ToDoList.Controllers
 
         public ActionResult Edit(int id)
         {
-            var customer = customersRepository.FindCustomer(id);
+            var customer = _customersRepository.FindCustomer(id);
             if (customer == null)
             {
                 ModelState.AddModelError("First", "Can't find customer with the given id");
@@ -53,7 +53,7 @@ namespace ToDoList.Controllers
                 return RedirectToAction("Edit", "Customers", new { customer.Id });
             }
 
-            if (!customersRepository.UpdateCustomer(customer))
+            if (!_customersRepository.UpdateCustomer(customer))
             {
                 ModelState.AddModelError("", "Failed to update.Customer is not found!");
             }

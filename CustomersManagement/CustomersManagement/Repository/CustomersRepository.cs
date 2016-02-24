@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using ToDoList.Models;
+using CustomersManagement.Models;
 
-namespace ToDoList.Repository
+namespace CustomersManagement.Repository
 {
     public class CustomersRepository
     {
-        private static readonly List<CustomerViewModel> customers = new List<CustomerViewModel>
+        private static readonly List<CustomerViewModel> Customers = new List<CustomerViewModel>
         {
             new CustomerViewModel
             {
@@ -134,7 +134,7 @@ namespace ToDoList.Repository
         {
             if (!IsExistingCustomer(customer))
             {
-                customers.Add(customer);
+                Customers.Add(customer);
                 return true;
             }
 
@@ -147,7 +147,7 @@ namespace ToDoList.Repository
 
             if (customer != null)
             {
-                customers.Remove(customer);
+                Customers.Remove(customer);
             }
         }
 
@@ -170,19 +170,19 @@ namespace ToDoList.Repository
                 DeleteCustomer(customer.Id);
             }
 
-            customers.Add(customer);
+            Customers.Add(customer);
 
             return true;
         }
 
         public CustomerViewModel FindCustomer(int id)
         {
-            return customers.SingleOrDefault(c => c.Id == id);
+            return Customers.SingleOrDefault(c => c.Id == id);
         }
 
         public IEnumerable<CustomerViewModel> GetAllCustomers()
         {
-            return customers;
+            return Customers;
         }
     }
 }
